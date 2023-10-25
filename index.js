@@ -30,12 +30,13 @@ const questions = [
 
 const application = () => {
     inquirer.prompt(questions).then(answers => {
-        try {
+      
             fs.writeFileSync('examples/logo.svg', shapes(answers))
-            console.log('logo.svg')
-        } catch (error) {
-            console.log(error.message)
+            if (err) throw err
+            console.log('file saved')
+        }) 
+           
         }
-    })
-}
+    
+
 application();
